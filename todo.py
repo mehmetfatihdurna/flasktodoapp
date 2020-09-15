@@ -1,8 +1,8 @@
 from flask import Flask,render_template,url_for,redirect,request
 from flask_sqlalchemy import SQLAlchemy
 
-app = Flask("__name__")
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////Users/mrnet/Desktop/TodoApp/todo.db" # your database way
+app = Flask(__name__, template_folder='/home/mrnet/flasktodoapp/templates') #templates files path
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite://///home/mrnet/flasktodoapp/todo.db" #your database path
 db = SQLAlchemy(app)
 
 class Todo(db.Model):
